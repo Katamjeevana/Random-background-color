@@ -5,41 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  #special {
-    display: flex;
-    height: 100vh;
-    left: 40%;
-    width: 100;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-
-  }
-
-  #b1 {
-    width: 100px;
-    height: 30px;
-    background-color: rgb(118, 118, 228);
-    margin: 10px;
-    border: solid 2px black
-  }
-
-  #b1:hover {
-    background-color: blue;
-  }
-</style>
 
 <body>
   <div id="special">
+    <label> Text any Color that you want</label>
+    <input type="color " id="colour">
     <button id="b1" onclick="change(event);">Click on me</button>
   </div>
   <script>
@@ -52,14 +25,11 @@
       }
       document.body.style.background = color
     }
-    var s = document.getElementById('sp')
-    s.onfocus = change2
-    s.onblur = change3
-    function change2() {
-      s.style.backgroundColor = "grey"
-    }
-    function change3() {
-      s.style.backgroundColor = "white"
+
+
+    let colorele = document.getElementById("colour");
+    colorele.oninput = function () {
+      document.body.style.background = this.value
     }
 
   </script>
